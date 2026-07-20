@@ -1,6 +1,9 @@
 import type { Piece, User, WeatherData } from "./types";
 
-export const DEMO_MODE = import.meta.env.VITE_DEMO_MODE === "true";
+// Ce repo est exclusivement la démo statique Vercel (aucun backend derrière) — DEMO_MODE
+// est donc forcé en dur plutôt que lu depuis VITE_DEMO_MODE, qui vit dans .env (gitignored)
+// et n'atteint jamais le build Vercel (clone GitHub propre, sans fichier .env local).
+export const DEMO_MODE = true;
 
 export const DEMO_USER: User = {
   id: "demo-user",
